@@ -1,6 +1,11 @@
-import { createListenerDecorator } from '../../utils';
 import { Scenes } from 'telegraf';
+import { ComposerMethodArgs } from '../../types';
+import { createListenerDecorator } from '../../utils';
 
-export const SceneEnter = createListenerDecorator<Scenes.BaseScene<never>>(
-  'enter',
-);
+type ResultType = (
+  ...args: ComposerMethodArgs<Scenes.BaseScene<never>>
+) => MethodDecorator;
+
+export const SceneEnter: ResultType = createListenerDecorator<
+  Scenes.BaseScene<never>
+>('enter');
