@@ -16,7 +16,7 @@ npm-debug.log
 /.nyc_output
 
 # source
-dist
+# dist
 
 # website
 /website/.cache-loader
